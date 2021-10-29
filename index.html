@@ -7,23 +7,31 @@
 
         body {
             background-color: #5D8298;
-            background-image: linear-gradient(#56B1E6, #5D8298 50%);
+            background-image: linear-gradient(#56B1E6, #5D8298 80%);
             background-repeat: no-repeat;
             margin: 0;
         }
 
-        h1 {font-family: Andale Mono,AndaleMono,monospace;
+        h1 {font-family: Consolas,monaco,monospace; 
             font-size: x-large;
             color: white;
             margin-left: 3%;
             margin-top: 3%;
             margin-bottom: 3%;}
         
-        a {font-family: Andale Mono,AndaleMono,monospace;
+        a {font-family: Consolas,monaco,monospace; 
             font-size: x-large;
             color: white;
         }
-        
+
+        p {
+            font-family: Consolas,monaco,monospace;
+            text-align: center;
+            color: white;
+            margin-left:10%;
+            margin-right:10%;
+        }
+
         img {
             vertical-align: middle;
             max-width: 256px;
@@ -45,7 +53,7 @@
             padding: 10px;
         }
 
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 800px) {
             img {
             vertical-align: middle;
             max-width: 128px;
@@ -70,9 +78,10 @@
             h1 {
                 text-align: center;
             }
+            
         }
 
-        @media only screen and (min-width: 601px) {
+        @media only screen and (min-width: 801px) {
             img.top {
                 transform-origin: top left;
             }
@@ -82,12 +91,20 @@
             img:hover {
                 transform:  scale(1.5);
             }
+            table {
+                float: left;
+            }
+            p {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            }
         }
 
     </style>
 </head>
 <body>
-<h1>GEORGE KALAFUT [<a href="https://twitter.com/hardrockbluesky">@hardrockbluesky</a>]</h1>
+<h1>GEORGE KALAFUT [<a href="https://twitter.com/hardrockbluesky">@hardrockbluesky</a>] [<a href="mailto:gkalafut@gmail.com">gkalafut@gmail.com</a>] </h1>
 <table>
     <tr>
         <td>
@@ -116,5 +133,6 @@
         </td>
     </tr>
 </table>
+<p float:right>Hi, I'm George, and this is a selection of pixel art I've worked on in 2021.</p>
 </body>
 </html>
