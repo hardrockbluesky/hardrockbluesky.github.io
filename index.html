@@ -3,21 +3,100 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        
         body {
-            background-color: #56B1E6;
-            background-image: linear-gradient(red, yellow 300px);
-            background-repeat: no-repeat;}
+            background-color: gray;
+            background-image: linear-gradient(#56B1E6, gray 10%);
+            background-repeat: no-repeat;
+            margin: 0; }
         h1 {font-family:'Courier New', Courier, monospace;}
+        
+        /*
+            img {display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            max-width: 400%;
+            max-height: 400%;} 
+            */
+
+        .row {
+            /*display: flex;*/
+            flex-wrap: wrap;
+            padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .column {
+            position: relative;
+            width: 100%;
+            height: 30%;
+            flex: 50%;
+            padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        img {
+            padding: 10px;
+            vertical-align: middle;
+            max-width: 256px;
+            max-height: 256px;
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
     </style>
 </head>
 <body>
 <h1>George Kalafut [hardrockbluesky]</h1>
-<p>I'm hosted with GitHub Pages.</p>
-<img src="Images/birdfullanim-export.gif" alt="bird in a tree pixel art" width="128" height="128">
-<img src="Images/finaldraftcombinedtiming.gif" alt="character pulling sword from stone with lightning" width="128" height="128">
-<img src="Images/lainfinal.gif" alt="low poly model in picocad" width="128" height="128">
-<img src="Images/laintexfinal.png" alt="texture for low poly model" width="128" height="128">
-<img src="Images/porgiandduke.png" alt="pig and a duck pixel art" width="128" height="128">
-<img src="Images/slimepunchbig.gif" alt="slime battle rpg gif" width="128" height="128">
+<p>Wow! Look at this art!</p>
+
+<table>
+    <tr>
+        <td>
+            <img src="Images/birdfullanim-export.gif" alt="bird in a tree pixel art">
+        </td>
+        <td>
+            <img src="Images/finaldraftcombinedtiming.gif" alt="character pulling sword from stone with lightning">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="Images/lainfinal.gif" alt="low poly model in picocad">
+        </td>
+        <td>
+            <img src="Images/laintexfinal.png" alt="texture for low poly model">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="Images/porgiandduke.png" alt="pig and a duck pixel art">
+        </td>
+        <td>
+            <img src="Images/slimepunchbig.gif" alt="slime battle rpg gif">    
+        </td>
+    </tr>
+</table>
+<div class="column">
+    <div class="row">
+        <img src="Images/birdfullanim-export.gif" alt="bird in a tree pixel art">
+        <img src="Images/finaldraftcombinedtiming.gif" alt="character pulling sword from stone with lightning">
+    </div>
+    <div class="row">
+        <img src="Images/lainfinal.gif" alt="low poly model in picocad">
+        <img src="Images/laintexfinal.png" alt="texture for low poly model">
+    </div>
+    <div class="row">
+        <img src="Images/porgiandduke.png" alt="pig and a duck pixel art">
+        <img src="Images/slimepunchbig.gif" alt="slime battle rpg gif">    
+    </div>
+</div>
+
 </body>
 </html>
