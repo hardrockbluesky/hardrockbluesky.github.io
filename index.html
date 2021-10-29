@@ -2,13 +2,23 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <script>
+        function imgWindow() {
+            div
+        }
+    </script>
     <style>
         
         body {
-            background-color: gray;
-            background-image: linear-gradient(#56B1E6, gray 10%);
-            margin: 0; }
-        h1 {font-family:'Courier New', Courier, monospace;}
+            background-color: #5D8298;
+            background-image: linear-gradient(#56B1E6, #5D8298 20%);
+            margin: 0;
+        }
+
+        h1 {font-family: Andale Mono,AndaleMono,monospace;
+            font-size: large;
+            margin-left: 3%;}
         
         /*
             img {display: block;
@@ -43,13 +53,14 @@
             vertical-align: middle;
             max-width: 256px;
             height: auto;
+            cursor: -moz-zoom-in; 
+            cursor: -webkit-zoom-in; 
+            cursor: zoom-in;
         }
 
         table {
             margin-left: auto;
             margin-right: auto;
-            border: 5px solid black;
-            border-collapse:collapse;
             table-layout: fixed;
         }
 
@@ -61,7 +72,11 @@
             height: auto;
             }
         }
-        
+
+        img:hover {
+            transform: scale(1.5);
+        }
+
     </style>
 </head>
 <body>
