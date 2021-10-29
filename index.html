@@ -3,95 +3,93 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <script>
-        function imgWindow() {
-            div
-        }
-    </script>
     <style>
-        
+
         body {
             background-color: #5D8298;
-            background-image: linear-gradient(#56B1E6, #5D8298 20%);
+            background-image: linear-gradient(#56B1E6, #5D8298 50%);
+            background-repeat: no-repeat;
             margin: 0;
         }
 
         h1 {font-family: Andale Mono,AndaleMono,monospace;
-            font-size: large;
-            margin-left: 3%;}
+            font-size: x-large;
+            color: white;
+            margin-left: 3%;
+            margin-top: 3%;
+            margin-bottom: 3%;}
         
-        /*
-            img {display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            max-width: 400%;
-            max-height: 400%;} 
-            */
-
-        .row {
-            /*display: flex;*/
-            flex-wrap: wrap;
-            padding: 10px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .column {
-            position: relative;
-            width: 100%;
-            height: 30%;
-            flex: 50%;
-            padding: 10px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
         img {
-            padding: 10px;
             vertical-align: middle;
             max-width: 256px;
             height: auto;
             cursor: -moz-zoom-in; 
             cursor: -webkit-zoom-in; 
             cursor: zoom-in;
-            transition: transform 1s;
+            transition: transform .25s ease-out;
+            transform-origin: left;
         }
 
         table {
-            margin-left: auto;
+            margin-left: 20px;
             margin-right: auto;
             table-layout: fixed;
         }
 
+        td {
+            padding: 10px;
+        }
+
         @media only screen and (max-width: 600px) {
             img {
-            padding: 10px;
             vertical-align: middle;
             max-width: 128px;
             height: auto;
-            transition: transform 1s;
+            transition: transform .25s ease-out;
+            transform-origin:center;
+            }
+            img:hover {
+            transform:  scale(1.5);
+            }
+            img.top {
+                transform-origin: center;
+            }
+            img.bottom {
+                transform-origin: center;
+            }
+            table {
+                margin-left: auto;
+                margin-right: auto;
+                table-layout: fixed;
+            }
+            h1 {
+                text-align: center;
             }
         }
 
-        img:hover {
-            transform:  scale(1.5);
+        @media only screen and (min-width: 601px) {
+            img.top {
+                transform-origin: top left;
+            }
+            img.bottom {
+                transform-origin: bottom left;
+            }
+            img:hover {
+                transform:  scale(1.5);
+            }
         }
 
     </style>
 </head>
 <body>
-<h1>George Kalafut [hardrockbluesky]</h1>
-<p>Wow! Look at this art!</p>
-
+<h1>GEORGE KALAFUT [hardrockbluesky]</h1>
 <table>
     <tr>
         <td>
-            <img src="Images/birdfullanim-export.gif" alt="bird in a tree pixel art">
+            <img class="top" src="Images/birdfullanim-export.gif" alt="bird in a tree pixel art">
         </td>
         <td>
-            <img src="Images/finaldraftcombinedtiming.gif" alt="character pulling sword from stone with lightning">
+            <img class="top" src="Images/finaldraftcombinedtiming.gif" alt="character pulling sword from stone with lightning">
         </td>
     </tr>
     <tr>
@@ -104,27 +102,14 @@
     </tr>
     <tr>
         <td>
-            <img src="Images/porgiandduke.png" alt="pig and a duck pixel art">
+            <img class="bottom" src="Images/porgiandduke.png" alt="pig and a duck pixel art" 
+            transform-origin: bottom left;>
         </td>
         <td>
-            <img src="Images/slimepunchbig.gif" alt="slime battle rpg gif">    
+            <img class="bottom" src="Images/slimepunchbig.gif" alt="slime battle rpg gif"
+            transform-origin: bottom left;>    
         </td>
     </tr>
 </table>
-<div class="column">
-    <div class="row">
-        <img src="Images/birdfullanim-export.gif" alt="bird in a tree pixel art">
-        <img src="Images/finaldraftcombinedtiming.gif" alt="character pulling sword from stone with lightning">
-    </div>
-    <div class="row">
-        <img src="Images/lainfinal.gif" alt="low poly model in picocad">
-        <img src="Images/laintexfinal.png" alt="texture for low poly model">
-    </div>
-    <div class="row">
-        <img src="Images/porgiandduke.png" alt="pig and a duck pixel art">
-        <img src="Images/slimepunchbig.gif" alt="slime battle rpg gif">    
-    </div>
-</div>
-
 </body>
 </html>
