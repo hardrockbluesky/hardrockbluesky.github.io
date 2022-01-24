@@ -19,6 +19,13 @@
             margin-left: 3%;
             margin-top: 3%;
             margin-bottom: 3%;}
+			
+		h2 {font-family: Consolas,monaco,monospace; 
+			font-size: 400%;
+            color: white;
+            margin-left: 3%;
+            margin-top: 3%;
+            margin-bottom: 3%;}
         
         a {font-family: Consolas,monaco,monospace; 
             font-size: x-large;
@@ -81,6 +88,22 @@
 				border-spacing: 40px;
 		}
 		
+		#backArrow {
+                display: block;
+				position: -webkit-sticky;
+				position: sticky;
+				left: 5%;
+				transform: rotate(90deg);
+				min-width: 40px;
+				max-width: 100px;
+				height: 5%;
+				width: 5%;
+		}
+		
+		#backArrow:hover {
+				transform: scale(1.5) rotate(90deg);
+		}
+		
 		.overlay {
 			position: absolute;
 			z-index: 200;
@@ -130,6 +153,9 @@
             h1 {
                 text-align: center;
             }
+			h2 {
+				font-size: 350%;
+			}
 			#desktopText {
 				display: none;
 			}
@@ -169,16 +195,7 @@
         }
 		
 		@media only screen and (min-aspect-ratio: 3/2) {
-			#downArrow {
-                display: block;
-				position: -webkit-sticky;
-				position: sticky;
-				bottom: 1px;
-				transform: translateY(-25px);
-				height:40px;
-				width:40px;
-				left: 50%;
-			}
+			
 		}
 		
 		@media only screen and (min-aspect-ratio: 5/3) {
@@ -217,74 +234,71 @@
 <a id="top" style="position: absolute; top: 10px; display:inline-block;"></a>
 <h1>GEORGE KALAFUT <nobr><img class="icon" src="Images/twitter.png">[<a href="https://twitter.com/hardrockbluesky">@hardrockbluesky</a>]</nobr> <nobr><img class="icon" src="Images/email.png">[<a href="mailto:gkalafut@gmail.com">gkalafut@gmail.com</a>]</nobr> </h1>
 
-<div width="100%" style="position: relative; z-index: -20;">
-<video width="100%" autoplay loop muted preload="metadata" poster="Images/RiverThumb.png">
-	<source src="Video/River2.mp4#t=0.1" type="video/mp4">
-</video>
-<img id="downArrow" src="Images/arrow3.png">
-</div>
+<img id="backArrow" src="Images/arrow3.png" onclick="history.back()";>
 
+<h2 style="text-align: center">Multiplayer</h2>
+<!--
 <p id="mobileText">Hi, I'm George, and this is a selection of assets and features I've built in Unreal. Click any of the thumbnails to check them out in detail, or scroll down for my background and skills.
 </p>
 
 <div width="100%" style="margin:20px;">
 <table id="standardTable">
     <tr>
-        <td id="vidThumb" class="top" onclick="parent.location='multiplayer.html'">
+        <td id="vidThumb" class="top" >
 			<div class="overlay">
 				<p id="overlayTextClass">Multiplayer</p>
 			</div>
-            <video width="100%" autoplay loop muted poster="Images/MultiplayerThumb.png">
+            <video width="100%" autoplay loop muted>
 				<source src="Video/Multiplayer.mp4" type="video/mp4">
 			</video>
 			<p id="overlayTextClassMobile">Multiplayer</p>
         </td>
-        <td id="vidThumb" class="top" onclick="parent.location='physics.html'">
+        <td id="vidThumb" class="top" >
 			<div class="overlay">
 				<p id="overlayTextClass">Custom Physics Movement</p>
 			</div>
-			<video width="100%" autoplay loop muted poster="Images/PhysicsThumb.png">
+			<video width="100%" autoplay loop muted>
 				<source src="Video/Physics.mp4" type="video/mp4">
 			</video>  
 			<p id="overlayTextClassMobile">Custom Physics Movement</p>
         </td>
     </tr>
     <tr>
-        <td id="vidThumb" onclick="parent.location='menu.html'">
+        <td id="vidThumb">
 			<div class="overlay">
 				<p id="overlayTextClass">Menu + Save System</p>
 			</div>
-            <video width="100%" autoplay loop muted poster="Images/MenuThumb.png">
+            <video width="100%" autoplay loop muted>
 				<source src="Video/MenuSquare.mp4" type="video/mp4">
 			</video>
 			<p id="overlayTextClassMobile">Menu + Save System</p>
         </td>
-        <td id="vidThumb" onclick="parent.location='steam.html'">
+        <td id="vidThumb">
 			<div class="overlay">
 				<p id="overlayTextClass">Steam Integration</p>
 			</div>
-            <video width="100%" autoplay loop muted preload="metadata" poster="Images/SteamThumb.png">
+            <video width="100%" autoplay loop muted>
 				<source src="Video/SteamStuff.mp4#t=4" type="video/mp4">
 			</video>
 			<p id="overlayTextClassMobile">Steam Integration</p>
         </td>
     </tr>
     <tr>
-        <td id="vidThumb" class="bottom" onclick="parent.location='materials.html'">
+        <td id="vidThumb" class="bottom" >
 			
 			<div class="overlay">
 				<p id="overlayTextClass">Material Tech Art</p>
 			</div>
-            <video width="100%" autoplay loop muted poster="Images/MaterialThumb.png">
+            <video width="100%" autoplay loop muted>
 				<source src="Video/TechArt.mp4" type="video/mp4">
 			</video>
 			<p id="overlayTextClassMobile">Material Tech Art</p>
         </td>
-        <td id="vidThumb" class="bottom" onclick="parent.location='gamemodes.html'">
+        <td id="vidThumb" class="bottom" >
 			<div class="overlay">
 				<p id="overlayTextClass">Game Mode Flow</p>
 			</div>
-            <video width="100%" autoplay loop muted poster="Images/GameModeThumb.png">
+            <video width="100%" autoplay loop muted>
 				<source src="Video/GameMode.mp4" type="video/mp4">
 			</video>
 			<p id="overlayTextClassMobile">Game Mode Flow</p>
@@ -294,58 +308,58 @@
 
 <table id="wideTable">
     <tr>
-        <td id="vidThumb" class="top" onclick="parent.location='multiplayer.html'">
+        <td id="vidThumb" class="top" >
 			<div class="overlay">
 				<p id="overlayTextClass">Multiplayer</p>
 			</div>
-            <video width="100%" autoplay loop muted poster="Images/MultiplayerThumb.png">
+            <video width="100%" autoplay loop muted>
 				<source src="Video/Multiplayer.mp4" type="video/mp4">
 			</video>
 			<p id="overlayTextClassMobile">Multiplayer</p>
         </td>
-        <td id="vidThumb" class="top" onclick="parent.location='physics.html'">
+        <td id="vidThumb" class="top" >
 			<div class="overlay">
 				<p id="overlayTextClass">Custom Physics Movement</p>
 			</div>
-			<video width="100%" autoplay loop muted poster="Images/PhysicsThumb.png">
+			<video width="100%" autoplay loop muted>
 				<source src="Video/Physics.mp4" type="video/mp4">
 			</video>  
 			<p id="overlayTextClassMobile">Custom Physics Movement</p>
         </td>
-		<td id="vidThumb" class="top" onclick="parent.location='menu.html'">
+		<td id="vidThumb" class="top" >
 			<div class="overlay">
 				<p id="overlayTextClass">Menu + Save System</p>
 			</div>
-            <video width="100%" autoplay loop muted poster="Images/MenuThumb.png">
+            <video width="100%" autoplay loop muted>
 				<source src="Video/MenuSquare.mp4" type="video/mp4">
 			</video>
 			<p id="overlayTextClassMobile">Menu + Save System</p>
         </td>
     </tr>
     <tr>
-        <td id="vidThumb" class="bottom" onclick="parent.location='steam.html'">
+        <td id="vidThumb" class="bottom" >
 			<div class="overlay">
 				<p id="overlayTextClass">Steam Integration</p>
 			</div>
-            <video width="100%" autoplay loop muted preload="metadata" poster="Images/SteamThumb.png">
+            <video width="100%" autoplay loop muted>
 				<source src="Video/SteamStuff.mp4#t=4" type="video/mp4">
 			</video>
 			<p id="overlayTextClassMobile">Steam Integration</p>
         </td>
-        <td id="vidThumb" class="bottom" onclick="parent.location='gamemodes.html'">
+        <td id="vidThumb" class="bottom" >
 			<div class="overlay">
 				<p id="overlayTextClass">Game Mode Flow</p>
 			</div>
-            <video width="100%" autoplay loop muted poster="Images/GameModeThumb.png">
+            <video width="100%" autoplay loop muted>
 				<source src="Video/GameMode.mp4" type="video/mp4">
 			</video>
 			<p id="overlayTextClassMobile">Game Mode Flow</p>
         </td>
-		<td id="vidThumb" class="bottom" onclick="parent.location='materials.html'">
+		<td id="vidThumb" class="bottom" >
 			<div class="overlay">
 				<p id="overlayTextClass">Material Tech Art</p>
 			</div>
-            <video width="100%" autoplay loop muted poster="Images/MaterialThumb.png">
+            <video width="100%" autoplay loop muted>
 				<source src="Video/TechArt.mp4" type="video/mp4">
 			</video>
 			<p id="overlayTextClassMobile">Material Tech Art</p>
@@ -376,7 +390,7 @@
     Click those links at the <a style="font-size:large; color:aquamarine" href="#top">top</a> to reach me, and have a good day!
 </p>
 </div>
-
+-->
 </div>
 <br><br><br>
 <p> All Content Copyright © 2022 by George Kalafut / HARDROCKBLUESKY </p>
