@@ -36,11 +36,21 @@
         a:hover {
             color: #8f465c;
         }
+		
+		img:hover {
+			transform: scale(1.2);
+			cursor: -moz-zoom-in; 
+            cursor: -webkit-zoom-in; 
+            cursor: zoom-in;
+			transition: transform .25s ease-out;
+		}
 
         p {
             font-family: Consolas,monaco,monospace;
             text-align: center;
             color: white;
+			margin-left: max(5%, 20px); 
+			margin-right: max(5%, 20px);
         }
 
         #vidThumb {
@@ -102,6 +112,10 @@
 		
 		#backArrow:hover {
 				transform: scale(1.5) rotate(90deg);
+		}
+		
+		#mainText {
+				max-width: 800px;
 		}
 		
 		.overlay {
@@ -214,6 +228,11 @@
 				width: 350px;
 				height: 350px;
 			}
+			#mainText {
+				max-width: 500px;
+				margin-left: auto;
+                margin-right: auto;
+			}
 			p{
 				font-size:large;
 			}
@@ -237,6 +256,15 @@
 <img id="backArrow" src="Images/arrow3.png" onclick="history.back()";>
 
 <h2 style="text-align: center">Game Mode Flow</h2>
+
+<br>
+
+<div width="100%" style="text-align:center">
+<img width="90%" src="Images/gamemode.png" style="max-width: 800px; margin-top: 20px; margin-left: max(5%, 20px); margin-right: max(5%, 20px); display: inline-block;" onclick="location.href='Images/gamemode.png'" title="Click Me!">
+<p id="mainText" width="90%" style="vertical-align: top;  display: inline-block; text-align: left;">On BeginPlay, the game mode begins a timer for round length. As players join, they are added to an array of Player Controllers and a server message is displayed announcing their arrival.
+New players are run through a custom spawn function which uses an interface to set some pawn variables based on server and mode settings; this will be more useful when multiple classes are enabled. On a kill or CTF capture, the game mode is alerted and player scores are incremented within their player states, 
+which are then replicated. The respawn function is bound to a DeathCaller function in the Player Controller. When the round is over, the game mode sets a "game is over" bool to prevent respawns. Click on the screenshot to get a better view of the score and respawn system of the PVP game mode.</p>
+</div>
 <!--
 <p id="mobileText">Hi, I'm George, and this is a selection of assets and features I've built in Unreal. Click any of the thumbnails to check them out in detail, or scroll down for my background and skills.
 </p>
@@ -393,6 +421,6 @@
 -->
 </div>
 <br><br><br>
-<p> All Content Copyright © 2022 by George Kalafut / HARDROCKBLUESKY </p>
+<p style="text-align:center;"> All Content Copyright © 2022 by George Kalafut / HARDROCKBLUESKY </p>
 </body>
 </html>

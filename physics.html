@@ -41,6 +41,8 @@
             font-family: Consolas,monaco,monospace;
             text-align: center;
             color: white;
+			margin-left: max(5%, 20px); 
+			margin-right: max(5%, 20px);
         }
 
         #vidThumb {
@@ -102,6 +104,10 @@
 		
 		#backArrow:hover {
 				transform: scale(1.5) rotate(90deg);
+		}
+		
+		#mainText {
+				max-width: 800px;
 		}
 		
 		.overlay {
@@ -214,6 +220,11 @@
 				width: 350px;
 				height: 350px;
 			}
+			#mainText {
+				max-width: 500px;
+				margin-left: auto;
+                margin-right: auto;
+			}
 			p{
 				font-size:large;
 			}
@@ -237,6 +248,18 @@
 <img id="backArrow" src="Images/arrow3.png" onclick="history.back()";>
 
 <h2 style="text-align: center">Custom Physics Movement</h2>
+
+<br>
+
+<div width="100%" style="text-align:center">
+<img width="90%" src="Images/physics.png" style="max-width: 800px;  margin-top: 20px; margin-left: max(5%, 20px); margin-right: max(5%, 20px); display: inline-block;">
+<p id="mainText" width="90%" style="vertical-align: top;  display: inline-block; text-align: left;">I learned quickly on this project that the default Unreal vehicles didn't fit my vision of slidy but controllable movement. After reading up on some other Unreal vehicle games, I decided to implement my own system 
+with drastically simplified physics. In the screenshot, you can see debug visualizations of the raycast suspension and "friction" force. The suspensions are based on a common raycast suspension algorithm, modified to provide some extra control in rollover and collision. All physics are run through substepping for 
+stability at all FPS ranges. Unreal hitches can be nasty on a non-substepped suspension! The main friction force is calculated against a dot product of the forward vector and velocity with a main friction multiplier, the number of wheels on the ground, and if throttle is being applied. Because this system relies
+ on simplification, many edge cases have to be handled - it started with a good "full speed" feel, and tweaks are applied from there to ensure it feels right at all speeds and conditions. For example, the center of mass is shifted downward, forward, and back to visually approximate "fun" physics while 
+ remaining completely stable. I have also implemented a four-wheel version of this model, and you can see a comparison <a style="font-size:large; color:aquamarine" href="Video/physicsComparison.mp4">here.</a> I could talk about this one for hours, feel free to reach out!
+ </p>
+</div>
 <!--
 <p id="mobileText">Hi, I'm George, and this is a selection of assets and features I've built in Unreal. Click any of the thumbnails to check them out in detail, or scroll down for my background and skills.
 </p>
@@ -393,6 +416,6 @@
 -->
 </div>
 <br><br><br>
-<p> All Content Copyright © 2022 by George Kalafut / HARDROCKBLUESKY </p>
+<p style="text-align:center;"> All Content Copyright © 2022 by George Kalafut / HARDROCKBLUESKY </p>
 </body>
 </html>

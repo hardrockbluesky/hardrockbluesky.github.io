@@ -41,6 +41,8 @@
             font-family: Consolas,monaco,monospace;
             text-align: center;
             color: white;
+			margin-left: max(5%, 20px); 
+			margin-right: max(5%, 20px);
         }
 
         #vidThumb {
@@ -102,6 +104,10 @@
 		
 		#backArrow:hover {
 				transform: scale(1.5) rotate(90deg);
+		}
+		
+		#mainText {
+				max-width: 800px;
 		}
 		
 		.overlay {
@@ -214,6 +220,11 @@
 				width: 350px;
 				height: 350px;
 			}
+			#mainText {
+				max-width: 500px;
+				margin-left: auto;
+                margin-right: auto;
+			}
 			p{
 				font-size:large;
 			}
@@ -237,6 +248,20 @@
 <img id="backArrow" src="Images/arrow3.png" onclick="history.back()";>
 
 <h2 style="text-align: center">Materials + Tech Art</h2>
+
+<br>
+
+<div width="100%" style="text-align:center">
+<!--<img width="90%" src="Images/menu.png" style="max-width: 800px; margin-top: 20px; margin-left: max(5%, 20px); margin-right: max(5%, 20px); display: inline-block;">-->
+<video width="90%" style="max-width: 800px; margin-top: 20px; margin-left: max(5%, 20px); margin-right: max(5%, 20px); display: inline-block;" autoplay loop muted preload="metadata" poster="Images/RiverThumb.png">
+	<source src="Video/materials.mp4" type="video/mp4">
+</video>
+<p id="mainText" width="90%" style="vertical-align: top;  display: inline-block; text-align: left;">My favorite material tools are noise, masking, and instancing. With an eye on performance and quick iteration, I've built tweakable master materials and widely usable 2d assets. Particles, "hero" assets,
+foliage, and energy effects all pull from their master material, reducing draw time. My "dirt" texture does multiple duty as noise for rock moss, distance colors for foliage, and even a pattern to break up smoke's cel shading edges. My gunfire is a particularly fun blend of Niagara system 
+and material trickery. "Bullets" and their tracer trails are drawn as masked areas of a ribbon which starts rendering at the gun barrel and ends at either the hit location or the maximum projectile distance. Those locations are passed in from the firing pawn to the niagara system, and the tracer material masks the
+resulting ribbon by spawn group, random offset, and distance to endpoint. The barrel's muzzle flash is built into the same Niagara system - it's a modified icosphere from Blender with vertex colors shaping a "flash" pattern. Random noise is scrolled over this mesh to make random flash shapes, and opacity is toggled 
+at the rate of fire. All of this presents a highly performant approach to fast, multiplayer-friendly gunfire.</p>
+</div>
 <!--
 <p id="mobileText">Hi, I'm George, and this is a selection of assets and features I've built in Unreal. Click any of the thumbnails to check them out in detail, or scroll down for my background and skills.
 </p>
@@ -393,6 +418,6 @@
 -->
 </div>
 <br><br><br>
-<p> All Content Copyright © 2022 by George Kalafut / HARDROCKBLUESKY </p>
+<p style="text-align:center;"> All Content Copyright © 2022 by George Kalafut / HARDROCKBLUESKY </p>
 </body>
 </html>
