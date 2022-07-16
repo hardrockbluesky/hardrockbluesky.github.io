@@ -3,6 +3,7 @@
 <head>
     <title>HARDROCKBLUESKY</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property=”og:image” content=”favicon.png” />
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <style>
 
@@ -14,7 +15,7 @@
         }
 
         h1 {font-family: Consolas,monaco,monospace; 
-            font-size: x-large;
+            font-size: 190%;
             color: white;
             margin-left: 3%;
             margin-top: 3%;
@@ -34,11 +35,9 @@
             font-family: Consolas,monaco,monospace;
             text-align: center;
             color: white;
-            margin-left:10%;
-            margin-right:10%;
         }
 
-        img {
+        #vidThumb {
             vertical-align: middle;
             max-width: 256px;
             height: auto;
@@ -48,64 +47,161 @@
             transition: transform .25s ease-out;
             transform-origin: left;
         }
-
+		
+		#vidThumb:hover .overlay{
+			opacity: 1;
+		}
+		
+		#vidThumb:hover	{
+			z-index: 5000;
+		}
+		
+		#overlayTextClass {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: white;
+			margin: 0;
+			padding: 0;
+		}
+		
+		#overlayTextClassMobile {
+			font-family: Consolas,monaco,monospace;
+            text-align: center;
+            color: white;
+			height: 30px;
+		}
+		
+		#downArrow {
+                display: none;
+		}
+		
+		#wideTable {
+				display: none;
+				border-spacing: 40px;
+		}
+		
+		.overlay {
+			position: absolute;
+			z-index: 200;
+			width: 256px;
+			height: 256px;
+			top:20;
+			transform: translateX(-.1px);
+			transition: .5s ease;
+			background: rgba(0, 0, 0, 0.5);
+			opacity: 0;
+		}
+			
         table {
             margin-left: 20px;
             margin-right: auto;
             table-layout: fixed;
+            border-spacing: 20px;
         }
 
         td {
-            padding: 10px;
+			position: relative;
         }
 
-        @media only screen and (max-width: 800px) {
-            img {
+        @media only screen and (max-width: 900px) {
+            #vidThumb {
             vertical-align: middle;
-            max-width: 128px;
+            max-width: 250px;
             height: auto;
             transition: transform .25s ease-out;
             transform-origin:center;
             }
-            img:hover {
-            transform:  scale(1.5);
+            #vidThumb:hover {
+            transform:  scale(1.2);
             }
-            img.top {
+            #vidThumb.top {
                 transform-origin: center;
             }
-            img.bottom {
+            #vidThumb.bottom {
                 transform-origin: center;
             }
             table {
                 margin-left: auto;
                 margin-right: auto;
                 table-layout: fixed;
+				border-spacing: 40px;
             }
             h1 {
                 text-align: center;
             }
-            
+			#desktopText {
+				display: none;
+			}
+			#mobileText {
+				margin-top: 5%;
+				margin-left: 5%;
+				margin-right: 5%;
+			}
+			
+			.overlay {
+				display: none;
+            }
         }
 
-        @media only screen and (min-width: 801px) {
-            img.top {
+        @media only screen and (min-width: 901px) {
+            #vidThumb.top {
                 transform-origin: top left;
             }
-            img.bottom {
+            #vidThumb.bottom {
                 transform-origin: bottom left;
             }
-            img:hover {
-                transform:  scale(1.5);
+            #vidThumb:hover {
+                transform:  scale(1.25);
             }
             table {
                 float: left;
             }
-            p {
-            position: fixed;
-            top: 20%;
-            left: 50%;
-            }
+            #mobileText {
+				display: none;
+			}
+			#desktopText {
+				display:inline-block;
+			}
+			#overlayTextClassMobile {
+				display: none;
+			}
         }
+		
+		@media only screen and (min-aspect-ratio: 3/2) {
+			#downArrow {
+                display: block;
+				position: -webkit-sticky;
+				position: sticky;
+				bottom: 1px;
+				transform: translateY(-25px);
+				height:40px;
+				width:40px;
+				left: 50%;
+			}
+		}
+		
+		@media only screen and (min-aspect-ratio: 5/3) {
+			#vidThumb {
+            max-width: 350px;
+            }
+			#wideTable {
+				display: block;
+                margin-left: auto;
+                margin-right: auto;
+			}
+			#standardTable {
+				display: none;
+			}
+			.overlay {
+				width: 350px;
+				height: 350px;
+			}
+			p{
+				font-size:large;
+			}
+		}
 
         .icon {
                 width: 18px;
@@ -119,45 +215,89 @@
     </style>
 </head>
 <body>
+<a id="top" style="position: absolute; top: 10px; display:inline-block;"></a>
 <h1>GEORGE KALAFUT <nobr><img class="icon" src="Images/twitter.png">[<a href="https://twitter.com/hardrockbluesky">@hardrockbluesky</a>]</nobr> <nobr><img class="icon" src="Images/email.png">[<a href="mailto:gkalafut@gmail.com">gkalafut@gmail.com</a>]</nobr> </h1>
-<table>
+
+<div width="100%" style="margin:20px;">
+<table id="standardTable">
     <tr>
-        <td>
-            <img class="top" src="Images/birdfullanim-export.gif" alt="bird in a tree pixel art">
+        <td id="vidThumb" class="top">
+            <img width="100%" src="Images/birdfullanim-export.gif">
         </td>
-        <td>
-            <img class="top" src="Images/finaldraftcombinedtiming.gif" alt="character pulling sword from stone with lightning">
+        <td id="vidThumb" class="top">
+			<img width="100%" src="Images/finaldraftcombinedtiming.gif">
         </td>
     </tr>
     <tr>
-        <td>
-            <img src="Images/lainfinal.gif" alt="low poly model in picocad">
+        <td id="vidThumb">
+            <img width="100%" src="Images/lainfinal.gif">
         </td>
-        <td>
-            <img src="Images/laintexfinal.png" alt="texture for low poly model">
+        <td id="vidThumb">
+            <img width="100%" src="Images/laintexfinal.png">
         </td>
     </tr>
     <tr>
-        <td>
-            <img class="bottom" src="Images/porgiandduke.png" alt="pig and a duck pixel art" 
-            transform-origin: bottom left;>
+        <td id="vidThumb" class="bottom">
+            <img width="100%" src="Images/porgiandduke.png">
         </td>
-        <td>
-            <img class="bottom" src="Images/slimepunchbig.gif" alt="slime battle rpg gif"
-            transform-origin: bottom left;>    
+        <td id="vidThumb" class="bottom">
+            <img width="100%" src="Images/slimepunchbig.gif">
         </td>
     </tr>
 </table>
-<p float:right>Hi, I'm George, and this is a selection of pixel art I've worked on in 2021.
-    <br><br> I'm a C# software development grad with a passion for art.
+
+<table id="wideTable">
+    <tr>
+        <td id="vidThumb" class="top">
+            <img width="100%" src="Images/birdfullanim-export.gif">
+        </td>
+        <td id="vidThumb" class="top">
+			<img width="100%" src="Images/finaldraftcombinedtiming.gif">
+        </td>
+		<td id="vidThumb" class="top">
+            <img width="100%" src="Images/porgiandduke.png">
+        </td>
+    </tr>
+    <tr>
+        <td id="vidThumb" class="bottom">
+            <img width="100%" src="Images/lainfinal.gif">
+        </td>
+        <td id="vidThumb" class="bottom">
+            <img width="100%" src="Images/laintexfinal.png">
+        </td>
+		<td id="vidThumb" class="bottom">
+            <img width="100%" src="Images/slimepunchbig.gif">
+        </td>
+    </tr>
+</table>
+
+<p id="mobileText">
+	Hi, I'm George, and this is a selection of my pixel art.
+    You can hover over them to get a better look.
     I spend a lot of time working on or studying games, mostly in Unreal, 
-    but I have a fun little Unity mod project you can play 
+    and I have a fun little Unity mod project you can play 
     <a style="font-size:large; color:aquamarine" href="https://play.unity.com/mg/fps/resumegame">here.</a>
     <br><br> 
-    I'm comfortable in Aseprite, Blender, Unreal, and I've started learning Unity. I'm also certified in UI design.
+    I'm also experienced in Aseprite, Blender, and various other open source gamedev tools. I've made some boring database apps in C#, C++, SQL, and Xamarin, plus I'm certified in UI design.
     <br><br>
-    Click those links at the top to reach me, and have a good day!
+    Click those links at the <a style="font-size:large; color:aquamarine" href="#top">top</a> to reach me, and have a good day!
 </p>
+
+<div style="padding:1px; overflow:auto; text-align:center;">
+<p id="desktopText" style="max-width: 500px; padding:40px; overflow:auto; height: 660px;">Hi, I'm George, and this is a selection of my pixel art.
+    <br><br> You can hover over them to get a better look.
+    I spend a lot of time working on or studying games, mostly in Unreal, 
+    and I have a fun little Unity mod project you can play 
+    <a style="font-size:large; color:aquamarine;" href="https://play.unity.com/mg/fps/resumegame">here.</a>
+    <br><br> 
+    I'm also experienced in Aseprite, Blender, and various other open source gamedev tools. I've made some boring database apps in C#, C++, SQL, and Xamarin, plus I'm certified in UI design.
+    <br><br>
+    Click those links at the <a style="font-size:large; color:aquamarine" href="#top">top</a> to reach me, and have a good day!
+</p>
+</div>
+
+</div>
 <br><br><br>
+<p> All Content Copyright © 2022 George Kalafut / HARDROCKBLUESKY </p>
 </body>
 </html>
